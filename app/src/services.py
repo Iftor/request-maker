@@ -26,7 +26,7 @@ class RequestService:
                 queue_responses = executor.map(make_request, requests_data)
         else:
             queue_responses = map(make_request, requests_data)
-        return list(queue_responses)
+        return list(filter(None, queue_responses))
 
     @staticmethod
     def _save_responses_data(responses_data: list[QueueResponse]) -> int:

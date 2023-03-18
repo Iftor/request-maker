@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-REQUEST_URL = "https://youtube.com"
+REQUEST_URL = "https://ru.wikipedia.org"
 
 REQUEST_LOGIN = os.getenv("REQUEST_LOGIN", None)
 
