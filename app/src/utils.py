@@ -4,14 +4,13 @@ import requests
 from requests import RequestException
 
 from app import settings
-from app.db.models import QueueResponse
-
+from app.db.models import QueueResponse, QueueRequest
 
 CREDENTIALS = settings.REQUEST_LOGIN, settings.REQUEST_PASSWORD
 CREDENTIALS = CREDENTIALS if all(CREDENTIALS) else None
 
 
-def make_request(request_data):
+def make_request(request_data: QueueRequest) -> QueueResponse | None:
     try:
         response = requests.request(
             method=request_data.method,
